@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Pitch Hub */
+  --hub-bg: #F8F7F4;
+  --hub-surface: #FFFFFF;
+  --hub-ink: #111110;
+  --hub-muted: #6B6963;
+  --hub-border: #E5E2DC;
+
+  /* MAISON VERRE */
+  --mv-bg: #FAF9F6;
+  --mv-surface: #F2EFE9;
+  --mv-ink: #141413;
+  --mv-muted: #6E6A63;
+  --mv-border: #E4DFD6;
+  --mv-accent: #4A2C2A;
+
+  /* SOLENE ATELIER — 9 AM Default */
+  --sol-bg: #F3EFEA;
+  --sol-surface: #E8E2D9;
+  --sol-ink: #121110;
+  --sol-muted: #645F57;
+  --sol-border: #D5CEC3;
+}
+
+[data-solene-mode="pm"] {
+  --sol-bg: #0E0E0D;
+  --sol-surface: #181715;
+  --sol-ink: #F2EDE6;
+  --sol-muted: #9E978D;
+  --sol-border: #2B2926;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--hub-bg);
+    color: var(--hub-ink);
+    font-family: "Inter", system-ui, sans-serif;
+    overflow-x: clip;
+  }
+
+  html[dir="rtl"] {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+  }
+
+  html[dir="rtl"] .font-serif,
+  html[dir="rtl"] .font-display {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    letter-spacing: 0 !important;
+  }
+
+  body {
+    overflow-x: clip;
+    margin: 0;
+  }
+}
+
+/* Hairline architectural range slider for Maison Verre Fit Calculator */
+input[type="range"].luxury-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 1px;
+  background: var(--mv-border);
+  outline: none;
+}
+
+input[type="range"].luxury-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--mv-ink);
+  border: 1px solid var(--mv-ink);
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+input[type="range"].luxury-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: var(--mv-ink);
+  border: 1px solid var(--mv-ink);
+  border-radius: 0px;
+  cursor: pointer;
+}
